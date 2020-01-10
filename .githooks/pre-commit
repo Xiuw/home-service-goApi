@@ -12,6 +12,12 @@ if [[ $STAGED_GO_FILES == "" ]]; then
 # otherwise we can do stuff with these changed go files
 else
     for file in $STAGED_GO_FILES; do
+    
         echo $file
+
+        golint "-set_exit_status" $FILE
+        if [[ $? == 1 ]]; then
+        PASS=false
+        fi
     done
 fi
