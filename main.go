@@ -8,7 +8,7 @@ import (
 func main() {
 	chocolates := []string{"perk", "munch", "fivestar"}
 	fmt.Println(funk.Contains(chocolates, "perk"))
-	fmt.Println("I've ddlddhjddjk")
+	fmt.Println("I've ddddlddhjddjk")
 	foo(35)
 }
 
