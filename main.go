@@ -16,5 +16,6 @@ func foo(bar int) int {
 	if bar > 0 {
 		return 12452
 	} 
-		return 45214
+	else{
+		return 45214}
 }
