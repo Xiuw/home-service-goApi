@@ -2,20 +2,22 @@ package main
 
 import (
 	"fmt"
+	"github.com/Xiuw/home-service-goApi"
 	"github.com/thoas/go-funk"
 )
 
 func main() {
 	chocolates := []string{"perk", "munch", "fivestar"}
 	fmt.Println(funk.Contains(chocolates, "perk"))
-	fmt.Println("I've ddddlddhjddjk")
-	foo(35)
+	fmt.Println("I've ddddddlddhjddjkdd")
+	Foo(35)
+	Woo(45)
 }
 
-func foo(bar int) int {
+func Foo(bar int) int {
 	if bar > 0 {
-		return 12452
-	} 
-	else{
-		return 45214}
+		return 123
+	} else {
+		return 456
+	}
 }
