@@ -5,6 +5,7 @@ STAGED_GO_FILES=$(git diff --cached --name-only | grep "\.go$")
 
 if [[ "$STAGED_GO_FILES" = "" ]]; then
   printf "\033[0;30m\033[33mNO STAGED GO FILES !!!!\033[0m\n"
+  exit 0
 fi
 
 PASS=

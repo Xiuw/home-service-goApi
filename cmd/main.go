@@ -4,13 +4,35 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello World!")
+func readyHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("ready")
+	fmt.Fprintf(w, "Api is ready")
+}
+
+func getEntryHandler(w http.ResponseWriter, r *http.Request) {
+
+	fmt.Println("Get all entries")
+}
+
+func registerHandler(w http.ResponseWriter, r *http.Request) {
+
+	fmt.Println("Register")
+}
+
+func loginHandler(w http.ResponseWriter, r *http.Request) {
+
+	fmt.Println("login")
 }
 
 func main() {
-	http.HandleFunc("/", handler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	router := mux.NewRouter().StrictSlash(true)
+
+	router.HandleFunc("/", readyHandler)
+	router.HandleFunc("/login", loginHandler)
+	router.HandleFunc("/register", registerHandler)
+	log.Fatal(http.ListenAndServe(":8000", router))
 }
